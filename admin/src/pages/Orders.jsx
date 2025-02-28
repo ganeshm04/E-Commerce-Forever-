@@ -8,7 +8,7 @@ import { assets } from '../assets/assets';
 
 const Orders = ({ token }) => {
 
-  const [orders, setOrders] = useState([]);
+  const [orders, setOrders] =useState([])
 
   const fetchAllOrders = async () => {
     if (!token) {
@@ -17,7 +17,7 @@ const Orders = ({ token }) => {
     try {
       const response = await axios.post(backendUrl + '/api/order/list', {}, { headers: { token } });
       if (response.data.success) {
-        setOrders(response.data.orders.reverse);
+        setOrders(response.data.orders.reverse());
       }
       else {
         toast.error(response.data.message);

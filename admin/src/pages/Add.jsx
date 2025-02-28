@@ -16,7 +16,7 @@ const Add = ({token}) => {
     const [price, setPrice] = useState('');
     const [category, setCategory] = useState('Men');
     const [subCategory, setSubCategory] = useState('Topwear');
-    const [bestSeller, setBestSeller] = useState(false);
+    const [bestseller, setBestSeller] = useState(false);
     const [sizes, setSizes] = useState([]);
 
 
@@ -29,7 +29,7 @@ const Add = ({token}) => {
             formData.append('price', price);
             formData.append('category', category);
             formData.append('subCategory', subCategory);
-            formData.append('bestSeller', bestSeller);
+            formData.append('bestseller', bestseller);
             formData.append('sizes',JSON.stringify(sizes));
 
 
@@ -139,7 +139,7 @@ const Add = ({token}) => {
             </div>
 
             <div className='flex gap-2 mt-2'>
-                <input onChange={() => setBestSeller(prev => !prev)} checked={bestSeller} type="checkbox" id='bestseller' />
+                <input onChange={() => setBestSeller((prev) => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
                 <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
             </div>
 

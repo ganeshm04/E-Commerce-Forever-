@@ -1,5 +1,5 @@
-import orderModel from "../models/orderModel";
-import userModel from "../models/userModel";
+import orderModel from "../models/orderModel.js";
+import userModel from "../models/userModel.js";
 import Stripe from 'stripe';
 import razorpay from 'razorpay'
 
@@ -184,9 +184,9 @@ const verifyRazorpay=async(req,res)=>{
 
 
 // All orders for admin panel
-const allOrder = async () => {
+const allOrder = async (req,res) => {
     try {
-        const orders = await orderModel.find({});
+        const orders = await orderModel.find({});  
         res.json({ success: true, orders });
 
     } catch (error) {

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import axios from 'axios';
@@ -13,8 +13,10 @@ const Orders = () => {
     try {
       if (!token) return null;
       const response = await axios.post(backendUrl + '/api/order/userorders', {}, { headers: { token } });
+      console.log(response.data);
       if (response.data.success) {
         let allOrdersItem = [];
+        
         response.data.orders.map((order) => {
           order.items.map((item) => {
             item['status'] = order.status;

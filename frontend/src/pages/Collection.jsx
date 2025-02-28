@@ -13,6 +13,8 @@ const Collection = () => {
     const [subcategory, setSubcategory] = useState([]);
     const [sortType, setSortType] = useState('relevant');
 
+    
+
     const toggleCategory = (e) => {
         if (category.includes(e.target.value)) {
             setCategory(prev => prev.filter((item) => item !== e.target.value));
@@ -66,7 +68,7 @@ const Collection = () => {
 
     useEffect(() => {
         applyFilter();
-    }, [category, subcategory, search, showSearch,products]);
+    }, [category, subcategory, search, showSearch, products]);
 
     useEffect(() => {
         sortProducts();
@@ -126,7 +128,7 @@ const Collection = () => {
                 {/* map products */}
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
                     {filteredProducts.map((product, index) => (
-                        <ProductItem key={index} id={product._id} image={product.images} name={product.name} price={product.price} />
+                        <ProductItem key={index} id={product._id} image={product.images[0]} name={product.name} price={product.price} />
                     ))}
                 </div>
             </div>
