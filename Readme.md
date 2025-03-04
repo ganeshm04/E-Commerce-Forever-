@@ -41,44 +41,45 @@ A full-stack e-commerce application with admin dashboard, user authentication, p
 ## Project Structure
 
 project/
-├── frontend/ # Customer website
-├── admin/ # Admin dashboard
-└── backend/ # API server
-frontend/
-├── src/
-│ ├── components/ # Reusable UI components
-│ ├── pages/ # Page components
-│ ├── context/ # React context
-│ ├── utils/ # Utility functions
-│ ├── App.jsx # Main entry point
-│ ├── index.html # HTML template
-│ ├── main.jsx # React entry point
-│ ├── vite-env.d.ts # TypeScript configuration
-│ ├── .env # Environment variables
-│ ├── .gitignore # Git ignore file
-│ ├── package.json # Project dependencies
-│ ├── README.md # Project documentation
-│ └── tailwind.config.js # Tailwind CSS configuration
 
+- ├── frontend/ # Customer website 
+- ├── admin/ # Admin dashboard
+- └── backend/ # API server
+- frontend/
+- ├── src/
+- │ ├── components/ # Reusable UI components
+- │ ├── pages/ # Page components
+- │ ├── context/ # React context
+- │ ├── utils/ # Utility functions
+- │ ├── App.jsx # Main entry point
+- │ ├── index.html # HTML template
+- │ ├── main.jsx # React entry point
+- │ ├── vite-env.d.ts # TypeScript configuration
+- │ ├── .env # Environment variables
+- │ ├── .gitignore # Git ignore file
+- │ ├── package.json # Project dependencies
+- │ ├── README.md # Project documentation
+- │ └── tailwind.config.js # Tailwind CSS configuration
 
-admin/
-├── src/
-│ ├── components/ # Admin UI components
-│ ├── pages/ # Admin pages
-│ └── App.jsx # Admin application component
-
-backend/
-├── src/
-│ ├── controllers/ # API controllers
-│ ├── models/ # MongoDB models
-│ ├── routes/ # API routes
-│ ├── utils/ # Utility functions
-│ ├── app.js # Express application
-│ ├── .env # Environment variables
-│ ├── .gitignore # Git ignore file
-│ ├── package.json # Project dependencies
-│ ├── README.md # Project documentation
-│ └── server.js # Server entry point
+- 
+- admin/
+- ├── src/
+- │ ├── components/ # Admin UI components
+- │ ├── pages/ # Admin pages
+- │ └── App.jsx # Admin application component
+-
+- backend/
+- ├── src/
+- │ ├── controllers/ # API controllers
+- │ ├── models/ # MongoDB models
+- │ ├── routes/ # API routes
+- │ ├── utils/ # Utility functions
+- │ ├── app.js # Express application
+- │ ├── .env # Environment variables
+- │ ├── .gitignore # Git ignore file
+- │ ├── package.json # Project dependencies
+- │ ├── README.md # Project documentation
+- │ └── server.js # Server entry point
 
 
 ## Installation & Setup
@@ -96,15 +97,15 @@ Create `.env` files in each directory:
 
 #### Backend (.env)
 
-PORT=4000
-MONGODB_URI=your_mongodb_uri
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_key
-CLOUDINARY_SECRET_KEY=your_cloudinary_secret
-STRIPE_SECRET_KEY=your_stripe_key
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=admin_password
+- PORT=4000
+- MONGODB_URI=your_mongodb_uri
+- JWT_SECRET=your_jwt_secret
+- CLOUDINARY_NAME=your_cloudinary_name
+- CLOUDINARY_API_KEY=your_cloudinary_key
+- CLOUDINARY_SECRET_KEY=your_cloudinary_secret
+- STRIPE_SECRET_KEY=your_stripe_key
+- ADMIN_EMAIL=admin@example.com
+- ADMIN_PASSWORD=admin_password
 
 
 #### Frontend & Admin (.env)
@@ -115,35 +116,35 @@ VITE_BACKEND_URL=http://localhost:4000
 
 1. Clone the repository
 
-bash
-git clone <repository-url>
+- bash
+- git clone <repository-url>
 
 2. Install Backend Dependencies
 
-bash
-cd backend
-npm install
+- bash
+- cd backend
+- npm install
 
 3. Install Frontend Dependencies
 
-bash
-cd frontend
-npm install
+- bash
+- cd frontend
+- npm install
 
 
 4. Install Admin Dependencies
 
-bash
-cd admin
-npm install
+- bash
+- cd admin
+- npm install
 
 
 
 
 4. Start the Development Servers
 
-bash
-npm run dev
+- bash
+- npm run dev
 
 
 
@@ -151,23 +152,23 @@ npm run dev
 
 1. Start Backend Server
 
-bash
-cd backend
-npm run server
+- bash
+- cd backend
+- npm run server
 
 
 2. Start Frontend Development Server
 
-bash
-cd frontend
-npm run dev
+- bash
+- cd frontend
+- npm run dev
 
 
 3. Start Admin Development Server
 
-bash
-cd admin
-npm run dev
+- bash
+- cd admin
+- npm run dev
 
 
 
