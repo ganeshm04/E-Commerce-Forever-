@@ -14,9 +14,25 @@ const ShopContextProvider = (props) => {
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [products, setProducts] = useState([]);
-    const [token, setToken] = useState([]);
+    const [token, setToken] = useState(localStorage.getItem('token') || '');
+    const [userId, setUserId] = useState('');
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (token) {
+            localStorage.setItem('token', token);
+            try {
+                const tokenData = JSON.parse(atob(token.split('.')[1]));
+                setUserId(tokenData._id);
+            } catch (error) {
+                console.log(error);
+                toast.error(error.message || 'Something went wrong');
+            }
+        } else {
+            localStorage.removeItem('token');
+            setUserId('');
+        }
+    }, [token]);
 
     const addToCart = async (productId, size) => {
         if (!size) {
@@ -34,16 +50,25 @@ const ShopContextProvider = (props) => {
         }
         else {
             cartData[productId] = {};
-            cartData[productId][size] = 1;
+            cartData[productId][size] = 1;       
         }
         setCartItems(cartData);
         if (token) {
             try {
-                await axios.post(backendUrl + "/api/cart/add", { productId, size }, { headers: { token } });
+                console.log("Frontend - Token being sent:", token);
+                console.log("Frontend - Request data:", { productId, size });
+                
+                await axios.post(backendUrl + "/api/cart/add", 
+                    { productId, size }, 
+                    { 
+                        headers: { token }
+                    }
+                );
             } catch (error) {
                 console.log(error);
-                toast.error(error.message);
-
+               
+                    toast.error(error.message || 'Something went wrong');
+                
             }
         }
     }
@@ -68,11 +93,24 @@ const ShopContextProvider = (props) => {
         setCartItems(cartData);
         if (token) {
             try {
-                await axios.post(backendUrl + "/api/cart/update", { productId, size }, { headers: { token } });
+                await axios.post(
+                    backendUrl + "/api/cart/update", 
+                    { 
+                        productId, 
+                        size, 
+                        quantity,
+                    }, 
+                    { 
+                        headers: { 
+                            token
+                        } 
+                    }
+                );
             } catch (error) {
                 console.log(error);
-                toast.error(error.message);
-
+                
+                    toast.error(error.message || 'Something went wrong');
+                
             }
         }
     }
@@ -80,11 +118,18 @@ const ShopContextProvider = (props) => {
 
     const getUserCart = async (token) => {
         try {
-            const response = await axios.post(backendUrl + "/api/cart/get", { headers: { token } });
+            const response = await axios.post(
+                backendUrl + "/api/cart/get", 
+                {}, // empty body
+                { 
+                    headers: { 
+                        token
+                    } 
+                }
+            );
             if (response.data.success) {
                 setCartItems(response.data.cartData);
             }
-
         } catch (error) {
             console.log(error);
             toast.error(error.message);
@@ -128,8 +173,16 @@ const ShopContextProvider = (props) => {
 
 
     useEffect(() => {
+        if (token) {
+            getUserCart(token);
+        }
+    }, [token])
+    
+    useEffect(() => {
         getProductsData();
     }, [])
+
+    
 
 
     useEffect(() => {
@@ -141,9 +194,24 @@ const ShopContextProvider = (props) => {
 
 
     const value = {
-        products, currency, deliveryPrice, search, setSearch, showSearch,
-        setShowSearch, cartItems, addToCart, getCount, updateQuantity,
-        getCartAmount, navigate, backendUrl, token, setToken,setCartItems
+        products, 
+        currency, 
+        deliveryPrice, 
+        search, 
+        setSearch, 
+        showSearch,
+        setShowSearch, 
+        cartItems, 
+        addToCart, 
+        getCount, 
+        updateQuantity,
+        getCartAmount, 
+        navigate, 
+        backendUrl, 
+        token, 
+        setToken, 
+        setCartItems,
+        userId, 
     }
     return (
 

@@ -26,7 +26,7 @@ const Orders = () => {
             allOrdersItem.push(item);
           })
         });
-        setOrderData(allOrdersItem.reverse);
+        setOrderData(allOrdersItem.reverse());
 
       }
     } catch (error) {
@@ -50,7 +50,7 @@ const Orders = () => {
           orderData.slice(1, 4).map((product, index) => (
             <div key={index} className='py-4 border-t border-b text-gray-700 flex flex-col md:flex-row md:justify-between  md:items-center gap-4'>
               <div className='flex items-start gap-6 txt-sm'>
-                <img src={product.image[0]} alt="" className='w-16 sm:w-20' />
+                <img src={product.images[0]} alt="" className='w-16 sm:w-20' />
                 <div>
                   <p className='sm:text-base font-medium'>{product.name}</p>
                   <div className='flex items-center gap-5 mt-1 text-base text-gray-500'>
