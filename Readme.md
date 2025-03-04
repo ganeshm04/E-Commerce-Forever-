@@ -1,192 +1,205 @@
-# E-commerce App
+# E-Commerce Platform
 
-This is a simple E-commerce application built with [Your Tech Stack].
+A full-stack e-commerce application with admin dashboard, user authentication, payment integration, and product management.
 
 ## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation & Setup](#installation--setup)
+- [Environment Variables](#environment-variables)
+- [Running the Application](#running-the-application)
+- [API Documentation](#api-documentation)
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [License](#license)
+## Features
+- User Authentication & Authorization
+- Product Management
+- Shopping Cart Functionality  
+- Order Processing
+- Payment Integration (Stripe & Razorpay)
+- Admin Dashboard
+- Responsive Design
 
-## Installation
+## Tech Stack
+### Frontend
+- React.js
+- Redux Toolkit
+- Tailwind CSS
+- Vite
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/yourusername/e-commerce-app.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd e-commerce-app
-    ```
-3. Install dependencies:
-    ```bash
-    npm install
-    ```
-4. Start the development server:
-    ```bash
-    npm start
-    ```
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
 
-## Usage
-
-1. Open your browser and navigate to `http://localhost:3000`.
-2. Explore the features of the E-commerce app.
-
-## File Structure
-
-```
-e-commerce-app/
-├── public/
-│   ├── index.html
-│   └── ...
-├── src/
-│   ├── assets/
-│   │   ├── images/
-│   │   └── styles/
-│   ├── components/
-│   │   ├── Header.js
-│   │   ├── Footer.js
-│   │   └── ...
-│   ├── pages/
-│   │   ├── Home.js
-│   │   ├── Product.js
-│   │   └── ...
-│   ├── services/
-│   │   ├── api.js
-│   │   └── ...
-│   ├── App.js
-│   ├── index.js
-│   └── ...
-├── .gitignore
-├── package.json
-├── README.md
-└── ...
-```
-
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-# E-commerce Application
-
-This project is an E-commerce application that consists of both frontend and backend components. The application allows users to browse products, add them to their cart, and proceed to checkout. It also includes an admin panel for managing products and orders.
+### Payment Gateways
+- Stripe
+- Razorpay
 
 ## Project Structure
 
-### Frontend
-The frontend is built using React and includes the following key components:
-
-- **Pages**: 
-  - `Cart.jsx`: Displays the user's cart with the ability to update quantities and proceed to checkout.
-  - `List.jsx`: Displays a list of products with the ability to remove products.
-  - `Orders.jsx`: Displays a list of orders with the ability to update order status.
-
-- **Components**:
-  - `Title.jsx`: A reusable component for displaying titles.
-  - `CartTotal.jsx`: Displays the total amount for the items in the cart.
-
-- **Context**:
-  - `ShopContext.js`: Provides global state management for the shop, including products, cart items, and user authentication.
-
-- **Assets**:
-  - Contains images and other static assets used in the application.
-
-### Backend
-The backend is built using Node.js and Express and includes the following key components:
-
-- **Middleware**:
-  - `adminAuth.js`: Middleware for authenticating admin users using JWT tokens.
-
-- **Routes**:
-  - `products.js`: Handles product-related API endpoints such as listing, adding, and removing products.
-  - `order.js`: Handles order-related API endpoints such as listing and updating order status.
-
-- **Controllers**:
-  - Contains the logic for handling requests and interacting with the database.
-
-## Key Features
-
-- **User Authentication**: Users can log in and their sessions are managed using JWT tokens.
-- **Product Management**: Admins can add, remove, and list products.
-- **Order Management**: Admins can view and update the status of orders.
-- **Cart Functionality**: Users can add products to their cart, update quantities, and proceed to checkout.
-- **Responsive Design**: The application is designed to be responsive and works well on both desktop and mobile devices.
-
-## Technologies Used
-
-- **Frontend**: React, Axios, React Router, React Context API, React Toastify
-- **Backend**: Node.js, Express, JWT, MongoDB ,stripe
-- **Styling**: Tailwind CSS 
-
-## Setup Instructions
-
-1. **Clone the repository**:
-   ```sh
-   git clone <repository-url>
-
-  ### Install Dependencies
-
-  **For the frontend:**
-  ```sh
-  cd frontend
-  npm install
-  ```
-
-  **For the backend:**
-  ```sh
-  cd backend
-  npm install
-  ```
+project/
+├── frontend/ # Customer website
+├── admin/ # Admin dashboard
+└── backend/ # API server
+frontend/
+├── src/
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Page components
+│ ├── context/ # React context
+│ ├── utils/ # Utility functions
+│ ├── App.jsx # Main entry point
+│ ├── index.html # HTML template
+│ ├── main.jsx # React entry point
+│ ├── vite-env.d.ts # TypeScript configuration
+│ ├── .env # Environment variables
+│ ├── .gitignore # Git ignore file
+│ ├── package.json # Project dependencies
+│ ├── README.md # Project documentation
+│ └── tailwind.config.js # Tailwind CSS configuration
 
 
+admin/
+├── src/
+│ ├── components/ # Admin UI components
+│ ├── pages/ # Admin pages
+│ └── App.jsx # Admin application component
 
-## Setup Instructions (continued)
+backend/
+├── src/
+│ ├── controllers/ # API controllers
+│ ├── models/ # MongoDB models
+│ ├── routes/ # API routes
+│ ├── utils/ # Utility functions
+│ ├── app.js # Express application
+│ ├── .env # Environment variables
+│ ├── .gitignore # Git ignore file
+│ ├── package.json # Project dependencies
+│ ├── README.md # Project documentation
+│ └── server.js # Server entry point
 
-### Set up environment variables
 
-Create a `.env` file in the `backend` directory with the following:
+## Installation & Setup
 
-```
-JWT_SECRET=<your-jwt-secret>
-ADMIN_EMAIL=<admin-email>
-ADMIN_PASSWORD=<admin-password>
-```
+### Prerequisites
+- Node.js (v16 or higher)
+- MongoDB
+- npm or yarn
+- Cloudinary account
+- Stripe/Razorpay account (for payments)
 
-### Run the application
+### Environment Variables
 
-**Start the backend server:**
+Create `.env` files in each directory:
 
-```sh
+#### Backend (.env)
+
+PORT=4000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_key
+CLOUDINARY_SECRET_KEY=your_cloudinary_secret
+STRIPE_SECRET_KEY=your_stripe_key
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=admin_password
+
+
+#### Frontend & Admin (.env)
+VITE_BACKEND_URL=http://localhost:4000
+
+
+### Installation Steps
+
+1. Clone the repository
+
+bash
+git clone <repository-url>
+
+2. Install Backend Dependencies
+
+bash
+cd backend
+npm install
+
+3. Install Frontend Dependencies
+
+bash
+cd frontend
+npm install
+
+
+4. Install Admin Dependencies
+
+bash
+cd admin
+npm install
+
+
+
+
+4. Start the Development Servers
+
+bash
+npm run dev
+
+
+
+### Running the Application
+
+1. Start Backend Server
+
+bash
 cd backend
 npm run server
-```
 
-**Start the frontend development server:**
 
-```sh
+2. Start Frontend Development Server
+
+bash
 cd frontend
 npm run dev
-```
 
-**Start the admin panel:**
 
-```sh
+3. Start Admin Development Server
+
+bash
 cd admin
 npm run dev
-```
 
-### Access the application
 
-Open your browser and navigate to:
 
-- [http://localhost:5173](http://localhost:5173) for the frontend.
-- [http://localhost:5174](http://localhost:5174) for the admin.
+The applications will be available at:
+- Frontend: http://localhost:5173
+- Admin Panel: http://localhost:5174
+- Backend API: http://localhost:4000
 
-The backend server will be running on [http://localhost:4000](http://localhost:4000).
+## API Endpoints
+
+### User Routes
+- POST /api/users/register - Register new user
+- POST /api/users/login - User login
+- POST /api/users/admin - Admin login
+
+### Product Routes
+- GET /api/products/list - Get all products
+- POST /api/products/add - Add new product (Admin)
+- GET /api/products/:id - Get single product
+
+### Order Routes
+- POST /api/orders/place - Place new order
+- GET /api/orders/list - Get all orders (Admin)
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the ISC License.
