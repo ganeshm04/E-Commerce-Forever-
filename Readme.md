@@ -200,6 +200,81 @@ The applications will be available at:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+
+# E-commerce Platform Features
+
+## User Features
+1. **Authentication & Authorization**
+   - User registration and login
+   - JWT-based authentication
+   - Protected routes for authenticated users
+
+2. **Product Management**
+   - Browse product catalog
+   - View product details
+   - Filter products by category
+   - Search functionality
+   - Multiple product images
+   - Size selection
+
+3. **Shopping Cart**
+   - Add/Remove items
+   - Update quantities
+   - Size-specific cart management
+   - Cart persistence across sessions
+   - Real-time cart total calculation
+
+4. **Checkout System**
+   - Multiple payment options:
+     - Cash on Delivery (COD)
+     - Stripe Payment Gateway
+   - Address management
+   - Order summary
+   - Shipping fee calculation
+
+5. **Order Management**
+   - Order history
+   - Order status tracking
+   - Order details view
+   - Payment status tracking
+
+## Admin Features
+1. **Product Management**
+   - Add new products
+   - Edit existing products
+   - Delete products
+   - Manage product images
+   - Update product inventory
+
+2. **Order Management**
+   - View all orders
+   - Update order status
+   - Track payment status
+   - Order filtering and sorting
+
+3. **User Management**
+   - View user details
+   - Track user orders
+   - Manage user access
+
+## Technical Features
+1. **Responsive Design**
+   - Mobile-friendly interface
+   - Adaptive layouts
+   - Cross-browser compatibility
+
+2. **Security**
+   - JWT authentication
+   - Secure payment processing
+   - Protected API endpoints
+   - Input validation
+
+3. **Performance**
+   - Optimized image loading
+   - Efficient data fetching
+   - State management
+   - Cart data persistence
+
 ## License
 
 This project is licensed under the ISC License.
