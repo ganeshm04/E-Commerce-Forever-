@@ -11,7 +11,11 @@ logs/
 *.log.*
 
 # Environment variables
-.env/
+.env
+.env.local
+.env.development
+.env.production
+.env.test
 
 # Build output
 dist/

@@ -1,0 +1,50 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Build output
+dist/
+build/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Payment API keys and secrets
+stripe.js
+razorpay.js
+stripe.config.js
+razorpay.config.js
+
+# JWT and Authentication
+jwt.config.js
+auth.config.js
+
+# Database credentials
+database.config.js
+mongodb.config.js
+
+# Any backup files
+*.bak
+*.backup 
